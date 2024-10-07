@@ -1,0 +1,281 @@
+/* CSS Variables for Themes */
+:root {
+  --background: #f9f9f9;
+  --text: #333;
+  --button-background: #007bff;
+  --button-text: #fff;
+  --header-background: #fff;
+  --header-text: #333;
+}
+
+[data-theme="dark"] {
+  --background: #1a1a1a;
+  --text: #f5f5f5;
+  --button-background: #555;
+  --button-text: #fff;
+  --header-background: #333;
+  --header-text: #f5f5f5;
+}
+
+[data-theme="reading"] {
+  --background: #ffffe0;
+  --text: #333;
+  --button-background: #006400;
+  --button-text: #fff;
+  --header-background: #ffffe0;
+  --header-text: #333;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+  background-color: var(--header-background);
+  color: var(--header-text);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--header-text);
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--button-background);
+}
+
+.theme-buttons button {
+  background: none;
+  border: none;
+  color: var(--header-text);
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.theme-buttons button:hover {
+  color: var(--button-background);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+}
+
+/* About Section */
+.about {
+  padding: 2rem 0;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.about .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.about img.profile-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-right: 2rem;
+}
+
+.about-content h2 {
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  max-width: 600px;
+  margin-bottom: 1rem;
+}
+
+.about-content ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .about .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about img.profile-img {
+    margin: 0 0 1.5rem 0;
+  }
+}
+
+/* Portfolio Section */
+.portfolio {
+  padding: 2rem 0;
+  background-color: var(--background);
+  color: var(--text);
+  text-align: center;
+}
+
+.portfolio h2 {
+  margin-bottom: 2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact {
+  padding: 2rem 0;
+  background-color: var(--background);
+  color: var(--text);
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 1.5rem;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact form label {
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--text);
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--text);
+}
+
+.contact form button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--button-background);
+  color: var(--button-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact form button:hover {
+  background-color: darken(var(--button-background), 10%);
+}
+
+.social-media {
+  margin-top: 2rem;
+}
+
+.social-media h3 {
+  margin-bottom: 1rem;
+}
+
+.social-media a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: var(--button-background);
+}
+
+/* Footer */
+footer {
+  padding: 1rem 0;
+  background-color: var(--header-background);
+  color: var(--header-text);
+  text-align: center;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
